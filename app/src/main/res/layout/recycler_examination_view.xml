@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#F4F4F4"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rlcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/txtExaminationName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/inter_medium"
+                android:maxWidth="230dp"
+                android:text="Examination Name"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <android.widget.Button
+                android:id="@+id/btnTake"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_style"
+                android:text="Take"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rlExamType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtExaminationName"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#696969"
+                    android:text="3 pm - 6 pm" />
+
+                <TextView
+                    android:id="@+id/txtType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#696969"
+                    android:text="MCQs" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlExamMarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlExamType"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/txtTotalMarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#696969"
+                    android:text="20 marks" />
+
+                <TextView
+                    android:id="@+id/txtExamType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Internal One"
+                    android:textColor="#733D47" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#e7e7e7"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_marginTop="36dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:text="Create New Exam"
+            android:textColor="#606060"
+            android:textSize="18sp" />
+
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/new_btn_bg"
+            android:fontFamily="@font/inter_regular"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/toolbar"
+        android:background="#fff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Add Instructions"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:textColorHint="#BF9B9B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Section Name"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/spinner_bg"
+                android:hint="Section title"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:textColorHint="#BF9B9B"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/spinner_bg"
+                android:hint="Section description (optional)"
+                android:padding="10dp"
+                android:textColor="#000"
+                android:textColorHint="#BF9B9B"
+                android:textSize="16sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewMcq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#f9f9f9"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/singlePan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etAddNewQues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/inter_medium"
+                        android:hint="Add question here"
+                        android:textColor="#000"
+                        android:textColorHint="#BF9B9B"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:id="@+id/viewLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@id/etAddNewQues"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#BF9B9B" />
+
+                    <LinearLayout
+                        android:id="@+id/lloptionA"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/viewLine"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/new_btn_bg">
+
+                            <android.widget.Button
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/mcq_btn"
+                                android:text="A"
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/txtAnswerA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/inter_medium"
+                                android:hint="Add Option"
+                                android:textColor="#000"
+                                android:textColorHint="#BF9B9B"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lloptionB"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/lloptionA"
+                        android:layout_marginStart="16dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/new_btn_bg">
+
+                            <android.widget.Button
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/mcq_btn"
+                                android:text="B"
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/txtAnswerB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/inter_medium"
+                                android:hint="Add Option"
+                                android:textColor="#000"
+                                android:textColorHint="#BF9B9B"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lloptionC"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:visibility="gone"
+                        android:layout_below="@id/lloptionB"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/new_btn_bg">
+
+                            <android.widget.Button
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/mcq_btn"
+                                android:text="C"
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/txtOptionC"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/inter_medium"
+                                android:hint="Add Option"
+                                android:textColor="#000"
+                                android:textColorHint="#BF9B9B"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lloptionD"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:visibility="gone"
+                        android:layout_below="@id/lloptionC"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/new_btn_bg">
+
+                            <android.widget.Button
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/mcq_btn"
+                                android:text="D"
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/txtOptionD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/inter_medium"
+                                android:hint="Add Option"
+                                android:textColor="#000"
+                                android:textColorHint="#BF9B9B"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lloptionD"
+                        android:layout_marginTop="16dp">
+
+                        <android.widget.Button
+                            android:id="@+id/btnDelete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="Delete"
+                            android:textAllCaps="false"
+                            android:textColor="#BF9B9B" />
+
+                        <android.widget.Button
+                            android:id="@+id/btnSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="Save"
+                            android:textAllCaps="false"
+                            android:textColor="#1AAE02" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Add Question"
+                android:textAllCaps="false"
+                android:background="@drawable/light_btn_bg"
+                android:textColor="#733D47"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Add another section"
+                android:textAllCaps="false"
+                android:background="@drawable/light_btn_bg"
+                android:textColor="#733D47"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="3dp"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</RelativeLayout>
